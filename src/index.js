@@ -1,12 +1,21 @@
 import _ from 'lodash';
 import './style.css';
+import { sortList } from './data.js';
 
-function component() {
-  const element = document.createElement('div');
+const ul = document.getElementById('leaderboard');
+const form = document.getElementById('entry-form');
 
-  element.innerHTML = _.join(['Recent', 'scores'], ' ');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-  return element;
-}
+  const name = form.elements.name.value;
+  const score = form.elements.score.value;
 
-document.body.appendChild(component());
+  ul.insertAdjacentHTML('beforeend',
+    `<li class="leaderboard-item" data-score=${score}>`
+        + `<span class="name">${name}</span>`
+        + `<span class="score">${score}</span>`
+      + '</li>');
+
+  sortList(ul);
+});
