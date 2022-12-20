@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/developertariq/Leaderboard/issues"
   },
-  "homepage": "https://github.com/developertariq/Leaderboard#readme"
+  "homepage": "https://github.com/developertariq/Leaderboard#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
 }
