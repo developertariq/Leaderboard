@@ -1,6 +1,7 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #080808;
+  overflow: hidden;
 }
 
 .main {
@@ -15,6 +16,8 @@ body {
   width: 100%;
   height: 80px;
   padding-left: 20px;
+  color: blue;
+  box-shadow: 3px 3px 3px #999;
 }
 
 .leaderboard {
@@ -27,7 +30,6 @@ body {
 .leaderboard .show-list {
   width: 60%;
   margin-top: 1em;
-  height: 320px;
 }
 
 .leaderboard .show-list .show-list-head {
@@ -38,16 +40,18 @@ body {
 
 .leaderboard .show-list .show-list-head button {
   padding: 0.5em 1em;
+  border-radius: 4px;
+  background-color: #080808;
+  color: #fff;
 }
 
 .leaderboard .show-list #leaderboard {
-  border: 1px solid black;
-  height: 100%;
+  border: 1px solid blue;
+  height: 350px;
 }
 
 .leaderboard .add-item {
   width: 40%;
-  height: 500px;
   padding: 1em;
 }
 
@@ -55,7 +59,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 0.5em 10px 0.5em -30px;
+  margin: 5px 10px 5px -30px;
+}
+
+.leaderboard-item:nth-child(odd) {
+  background-color: #cfebeb;
 }
 
 form {
@@ -68,12 +76,15 @@ form {
 form input[type=text],
 form input[type=number] {
   padding: 0.5em;
-  border: 1px solid #080808;
+  border: 1px solid #b8b7b7;
   border-radius: 4px;
-  width: 100%;
+  width: calc(100% - 15px);
 }
 
 form input[type=submit] {
   padding: 0.5em 1em;
   align-self: flex-end;
+  border-radius: 4px;
+  background-color: #080808;
+  color: #fff;
 }
