@@ -1,21 +1,31 @@
 import _ from 'lodash';
 import './style.css';
-import { sortList } from './data.js';
+import { add, loadList } from './data.js';
 
-const ul = document.getElementById('leaderboard');
+const gameId = 'S58ZtGSMOy7mSGqc3Q6H';
+const myList = document.getElementById('leaderboard');
 const form = document.getElementById('entry-form');
+const btnRefresh = document.getElementById('btnRefresh');
+
+const clearForm = () => {
+  form.elements.name.value = '';
+  form.elements.score.value = '';
+};
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  const users = {};
+  users.user = form.elements.name.value;
+  users.score = form.elements.score.value;
+  add(gameId, users, myList);
+  clearForm();
+});
 
-  const name = form.elements.name.value;
-  const score = form.elements.score.value;
+btnRefresh.addEventListener('click', () => {
+  myList.innerHTML = '';
+  loadList(gameId, myList);
+});
 
-  ul.insertAdjacentHTML('beforeend',
-    `<li class="leaderboard-item" data-score=${score}>`
-        + `<span class="name">${name}</span>`
-        + `<span class="score">${score}</span>`
-      + '</li>');
-
-  sortList(ul);
+window.addEventListener('load', () => {
+  loadList(gameId, myList);
 });
