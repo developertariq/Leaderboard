@@ -58,14 +58,6 @@ body {
   margin: 0.5em 10px 0.5em -30px;
 }
 
-.leaderboard-item .score::before {
-  content: " : ";
-}
-
-.leaderboard-item:nth-child(odd) {
-  background-color: #e8ecec;
-}
-
 form {
   display: flex;
   flex-direction: column;
