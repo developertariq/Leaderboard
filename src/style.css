@@ -47,7 +47,8 @@ body {
 
 .leaderboard .show-list #leaderboard {
   border: 1px solid blue;
-  height: 350px;
+  height: 340px;
+  overflow: auto;
 }
 
 .leaderboard .add-item {
