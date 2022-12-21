@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import { sortList } from './data.js';
+import sortList from './data.js';
 
 const ul = document.getElementById('leaderboard');
 const form = document.getElementById('entry-form');

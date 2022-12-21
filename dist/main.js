@@ -133,9 +133,10 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /*!*********************!*\
   !*** ./src/data.js ***!
   \*********************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("function sortList(list) {\n  const listItems = list.querySelectorAll('li');\n  const listItemsArray = Array.from(listItems);\n\n  listItemsArray.sort((a, b) => {\n    const scoreA = parseInt(a.dataset.score, 10);\n    const scoreB = parseInt(b.dataset.score, 10);\n    return scoreB - scoreA;\n  });\n\n  list.innerHTML = '';\n\n  listItemsArray.forEach((item) => {\n    list.appendChild(item);\n  });\n}\n\nmodule.exports = sortList;\n\n//# sourceURL=webpack://leaderboard/./src/data.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction sortList(list) {\n  const listItems = list.querySelectorAll('li');\n  const listItemsArray = Array.from(listItems);\n\n  listItemsArray.sort((a, b) => {\n    const scoreA = parseInt(a.dataset.score, 10);\n    const scoreB = parseInt(b.dataset.score, 10);\n    return scoreB - scoreA;\n  });\n\n  list.innerHTML = '';\n\n  listItemsArray.forEach((item) => {\n    list.appendChild(item);\n  });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sortList);\n\n//# sourceURL=webpack://leaderboard/./src/data.js?");
 
 /***/ }),
 
@@ -146,7 +147,7 @@ eval("function sortList(list) {\n  const listItems = list.querySelectorAll('li')
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data.js */ \"./src/data.js\");\n/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_data_js__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nconst ul = document.getElementById('leaderboard');\nconst form = document.getElementById('entry-form');\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n\n  const name = form.elements.name.value;\n  const score = form.elements.score.value;\n\n  ul.insertAdjacentHTML('beforeend',\n    `<li class=\"leaderboard-item\" data-score=${score}>`\n        + `<span class=\"name\">${name}</span>`\n        + `<span class=\"score\">${score}</span>`\n      + '</li>');\n\n  (0,_data_js__WEBPACK_IMPORTED_MODULE_2__.sortList)(ul);\n});\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data.js */ \"./src/data.js\");\n\n\n\n\nconst ul = document.getElementById('leaderboard');\nconst form = document.getElementById('entry-form');\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n\n  const name = form.elements.name.value;\n  const score = form.elements.score.value;\n\n  ul.insertAdjacentHTML('beforeend',\n    `<li class=\"leaderboard-item\" data-score=${score}>`\n        + `<span class=\"name\">${name}</span>`\n        + `<span class=\"score\">${score}</span>`\n      + '</li>');\n\n  (0,_data_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(ul);\n});\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
 
 /***/ })
 

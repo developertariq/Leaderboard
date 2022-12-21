@@ -15,4 +15,4 @@ function sortList(list) {
   });
 }
 
-module.exports = sortList;
+export default sortList;
